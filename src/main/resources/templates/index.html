@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ru" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>TestTask</title>
+</head>
+<body>
+<header>
+    <h1>Форма отправки</h1>
+</header>
+<main>
+    <section>
+        <form action="#" th:action="@{/sort}" th:object="${bubbleRequest}" method="post">
+            <br>
+            <labeL>
+                Запрос: <input type="text" field="*{input}" name="input">
+            </labeL>
+            <br>
+            <br>
+            <input type="submit" value="Отправить">
+        </form>
+        <div class="result-block" th:if="${bubbleitemResponse != null && bubbleitemResponse.id != null}">
+            <p th:text="'id: ' + ${bubbleitemResponse.id}" />
+            <p th:text="'Ответ: ' + ${bubbleitemResponse.sortResult}" />
+        </div>
+    </section>
+</main>
+</body>
+
